@@ -1,6 +1,6 @@
 version: 2.1
 
- orbs:
+orbs:
    heroku: circleci/heroku@x.y # Use the Heroku orb in your config
 
  workflows:
