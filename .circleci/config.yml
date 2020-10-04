@@ -5,11 +5,11 @@ version: 2.1
 workflows:
   test-and-deploy:
     jobs:
-      - node/test
+#      - node/test
       - heroku/deploy-via-git:
           filters:
             branches:
               only:
                 - master
-          requires:
-            - node/test
+#          requires:
+#            - node/test
