@@ -1,15 +1,15 @@
-orbs:
-  heroku: circleci/heroku@1.2.2
-  node: circleci/node@4.1.0
 version: 2.1
-workflows:
-  test-and-deploy:
-    jobs:
-#      - node/test
-      - heroku/deploy-via-git:
-          filters:
-            branches:
-              only:
-                - master
-#          requires:
-#            - node/test
+
+ orbs:
+   heroku: circleci/heroku@1.2.2
+   node: circleci/node@4.1.0 
+ workflows:
+   heroku_deploy:
+     jobs:
+       - node/test
+       - heroku/deploy-via-git:
+           requires:
+             - node/test
+           filters:
+             branches:
+               only: master
